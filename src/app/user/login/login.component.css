@@ -1,0 +1,50 @@
+
+
+.view-container {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center
+}
+
+
+
+form {
+    border: 0.02cm solid var(--secondary-dar-trans) !important;
+
+}
+
+
+
+.icon {
+    width: 2cm;
+    height: 2cm;
+}
+
+.install-container {
+    position: relative;
+    display: flex;
+}
+
+.install-message {
+   margin: 0.2cm;
+}
+
+.install-button {
+    position: fixed;
+    left: 0.3cm;
+    top: 0.3cm;
+}
+
+.resend-label {
+  padding-left: 0.2cm;
+  padding-right: 0.2cm;
+  width: 100%;
+  direction: rtl;
+  text-align: center;
+}
+
+.flex {
+  display: flex;
+}

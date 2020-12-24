@@ -1,0 +1,7 @@
+/* You can add global styles to this file, and also import other style files */
+@import 'theme/app-styles.css';
+@import 'theme/theme.css';
+@import 'theme/theme.dark.css';
+@import 'theme/theme.blue.css';
+@import 'theme/animation.css';
+@import 'theme/progress-bar.css';

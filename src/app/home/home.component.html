@@ -1,0 +1,77 @@
+<!-- home page-->
+
+<page>
+  <nav-header [back]="false" [title]="'systems' | translate" (menuClicked)="onMenuClicked()" [option]="true"
+    optionIcon="pi-plus" (optionClicked)="addSystem()">
+
+  </nav-header>
+  <page-content [transparent]="false">
+    <router-outlet></router-outlet>
+  </page-content>
+
+</page>
+<!-- side menu -->
+<p-sidebar [(visible)]="menuDisplay" position="left" [dismissible]="true" [showCloseIcon]="false">
+
+  <button pButton type="button" (click)="onSignOut()" icon="pi pi-sign-out" iconPos="center"
+    class="sign-out ui-button-raised ui-button-rounded"></button>
+
+
+  <!-- menu header-->
+  <div class="menu-header">
+    <img class="logo" src="assets/images/logo.png">
+    <p class="title">{{ 'app-name' | translate}}</p>
+  </div>
+
+  <div class="menu-content-container">
+
+    <!-- language select -->
+    <div class="card">
+      <p class="title">{{ 'select-lang' | translate }}</p>
+      <ng-container *ngFor="let lng of languages">
+        <div style="width: 100%;  margin-top: 0.5cm;">
+          <p-radioButton [label]="lng.label" [value]="lng.code" [(ngModel)]="selectedLanguage"
+            (onClick)="switchLanguage(lng)"></p-radioButton>
+        </div>
+      </ng-container>
+    </div>
+
+
+    <!-- applications
+    <div class="card">
+      <p class="title">{{ 'select-app' | translate }}</p>
+      <ng-container *ngFor="let app of applications">
+        <div style="width: 100%;  margin-top: 0.5cm;">
+          <p-radioButton [label]="app.label" [value]="app" [(ngModel)]="selectedApplication"
+            (onClick)="switchApplication()"></p-radioButton>
+        </div>
+      </ng-container>
+    </div>
+    -->
+
+
+
+
+    <div style="height: 2cm;"></div>
+  </div>
+</p-sidebar>
+<!-- end of side menu-->
+
+
+
+<!-- apps dialog
+
+<p-dialog position="center" [(visible)]="showAppsDialog" appendTo="body" [modal]="true" [closable]="true"
+  [dismissableMask]="true" [draggable]="false" styleClass="app-dialog">
+  <p-header>
+    {{ 'applications' | translate}}
+  </p-header>
+
+  <p-listbox [options]="applications" [(ngModel)]="selectedApplication" (onChange)="switchApplication()"
+    [filterValue]="filterValue" filter=true filterPlaceHolder="Search" [style]="{'width' : '100%' , 'height': '6cm'}">
+  </p-listbox>
+
+  <p-footer>
+  </p-footer>
+</p-dialog>
+ end of apps dialog-->

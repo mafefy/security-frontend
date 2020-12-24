@@ -1,0 +1,26 @@
+<!-- navigation header -->
+<div class="header-container">
+        <!-- menu button -->
+        <ng-container *ngIf="menu">
+            <button type="text" (click)="onMenuClicked()" pButton  icon="pi pi-align-justify"></button>
+        </ng-container>
+
+        <!-- back button -->
+        <ng-container *ngIf="back">
+            <button type="text" (click)="onBackClicked()" pButton  icon="pi pi-angle-left"></button>
+        </ng-container>
+
+        <!-- header title-->
+        <h3>{{title}}</h3>
+
+        <!-- extra options button-->
+        <ng-container *ngIf="option">
+            <button type="text" (click)="onOptionClicked()" pButton  [icon]=" 'pi ' +  optionIcon "></button>
+        </ng-container>
+
+        <ng-container *ngIf="!option">
+            <button></button>
+        </ng-container>
+        
+
+</div>

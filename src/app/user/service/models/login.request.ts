@@ -1,0 +1,12 @@
+import { Request } from 'src/app/common/models/request';
+import { Credentials } from './credentials';
+
+export class LoginRequest extends Request {
+    public credentials: Credentials;
+
+    constructor(credentials: Credentials ) {
+        super();
+        this.credentials = credentials;
+     }
+    
+}

@@ -1,0 +1,32 @@
+.dark-mode {
+  --background-color: rgb(21 21 21);
+  --primary-dark: rgb(41, 41, 41);
+  --primary-middle: rgb(29, 29 ,29);
+  --primary-light: rgb(53 ,53, 53);
+  --primary-shadow: rgba(27, 27, 27, 0.137);
+  --secondary-dark: #006d69;
+  --secondary-dar-trans: #006d6978;
+  --secondary-middle: #26827d;
+  --secondary-light: #4d978b;
+  --secondary-shadow: #002221;
+  --secondary-shadow-trans: #0022215e;
+  --ternirary-dark: #e68a44;
+  --ternirary-middle: #eea76d;
+  --ternirary-light: #f3c9a9;
+  --ternirary-shadow: #331803;
+  --side-bar: var(--primary-light);
+  --danger: rgb(194, 0, 0);
+  --danger-trans: #ff00005e;
+  --layer-0: var(--primary-light) !important;
+  --layer-1: var(--secondary-middle) !important;
+  --layer-2: var(--ternirary-middle) !important;
+  --primary-color: var(--primary-light) !important;
+  --text-color: #eaeaea !important;
+  --primary-color-text: #eaeaea !important;
+  --text-color-secondary: #eaeaea !important;
+  --ternirary-color-text: var(--text-color-secondary);
+  --calendar-color-text: var(--secondary-light);
+  color: var(--primary-color-text);
+
+
+}

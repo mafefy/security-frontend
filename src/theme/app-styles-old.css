@@ -1,0 +1,661 @@
+
+@font-face {
+  font-family: "benchnineregular";
+  src: url("/assets/fonts/bench-nine/benchnine-regular-webfont.woff2")
+      format("woff2"),
+    url("/assets/fonts/bench-nine/benchnine-regular-webfont.woff")
+      format("woff"),
+    url("/assets/fonts/bench-nine/benchnine-regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "EBGaramond";
+  src: url("/assets/fonts/EB_Garamond/EBGaramond-VariableFont_wght.ttf");
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+* {
+  font-family: EBGaramond;
+  font-weight: normal;
+  font-style: normal;
+}
+
+body {
+  /*
+  background-color: var(--background-color) ;
+  */
+  margin: 0;
+
+  /* prevent selection */
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  background-color: var(--background-color);
+}
+
+.padding {
+  padding-left: 1%;
+  padding-right: 1%;
+}
+
+@media only screen and (min-width: 640px) {
+  .padding {
+    padding-left: 4%;
+    padding-right: 4%;
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  .padding {
+    padding-left: 8%;
+    padding-right: 8%;
+  }
+}
+
+.high-privacy {
+  /*
+  -webkit-box-shadow: inset 0px 0px 10px 2px rgba(255, 0, 0, 0.41) !important;
+  -moz-box-shadow: inset 0px 0px 10px 2px rgba(255, 0, 0, 0.41) !important;
+  box-shadow: inset 0px 0px 10px 2px rgba(255, 0, 0, 0.41) !important;
+  */
+  border-left: 5px solid var(--danger-trans);
+
+  -webkit-animation-name: flash;
+  animation-name: flash;
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+  animation-iteration-count: 2;
+}
+
+.medium-privacy {
+  border-left: 5px solid var(--ternirary-light);
+
+  -webkit-animation-name: flash;
+  animation-name: flash;
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+  animation-iteration-count: 1;
+}
+
+.low-privacy {
+  border-left: 5px solid var(--secondary-dark);
+
+  -webkit-animation-name: flash;
+  animation-name: flash;
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+  animation-iteration-count: 1;
+}
+
+.shadow {
+  box-shadow: 2px 2px 4px 4px var(--primary-shadow);
+  border-style: solid;
+  border-color: var(--primary-middle);
+  border-width: 0.01cm;
+  border-radius: 0.2cm;
+}
+
+.margin-auto {
+  margin: auto;
+}
+.text-centered {
+  text-align: center;
+}
+
+/* dialogs*/
+
+.app-dialog {
+  width: 80%;
+}
+
+@media (orientation: landscape) {
+  .app-dialog {
+    width: 50%;
+  }
+}
+
+.clickable {
+  cursor: pointer;
+}
+
+.clickable:hover {
+  -webkit-animation-name: fadeInBounce;
+  animation-name: fadeInBounce;
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+
+/*
+the progress bar in correspondences 
+*/
+.ui-progressbar {
+  height: 0.4cm !important;
+}
+
+/*
+modify the check  box
+*/
+.ui-chkbox {
+  transform: scale(1.4);
+}
+
+.ui-chkbox-label {
+  margin: 0 0 0 0.7em;
+}
+
+/* multi select menu */
+
+.ui-multiselect {
+  background: var(--primary-light) !important;
+  border: 1px solid var(--secondary-dark) !important;
+}
+
+.ui-multiselect .ui-multiselect-label {
+  color: var(--primary-color-text) !important;
+}
+
+.ui-multiselect .ui-multiselect-trigger {
+  background-color: var(--secondary-dark) !important;
+  color: var(--text-color-secondary) !important;
+}
+
+.ui-multiselect-panel .ui-multiselect-header {
+  border-bottom: 1px solid var(--secondary-light) !important;
+  background-color: var(--secondary-dark) !important;
+}
+
+.ui-multiselect-panel {
+  top: 10% !important;
+  left: 10% !important;
+  right: 10% !important;
+  bottom: 20% !important;
+  border-color: var(--secondary-dark) !important;
+  border-width: 0.1cm !important;
+  border-style: solid !important;
+  border-radius: 0.3cm !important;
+  background-color: gray;
+  box-shadow: 0px 0px 8px 4px var(--secondary-shadow-trans) !important;
+  background-color: var(--primary-light) !important;
+}
+
+/* element */
+.ui-multiselect-item {
+  min-height: 0.9cm !important;
+  background-color: #f1f1f1 !important;
+  margin-top: 0.1cm !important;
+}
+
+.ui-state-highlight {
+  color: var(--secondary-dark) !important;
+}
+
+.ui-multiselect-panel
+  .ui-multiselect-header
+  .ui-multiselect-filter-container
+  .ui-multiselect-filter-icon {
+  color: var(--secondary-dark) !important;
+}
+
+.ui-multiselect-panel .ui-multiselect-items .ui-multiselect-item {
+  color: var(--primary-color-text) !important;
+  background-color: var(--primary-light) !important;
+}
+
+.ui-multiselect-panel
+  .ui-multiselect-items
+  .ui-multiselect-item.ui-state-highlight {
+  background-color: var(--secondary-dark) !important;
+  color: var(--primary-color-text) !important;
+  background-color: var(--secondary-middle) !important;
+}
+
+.ui-multiselect-header .ui-multiselect-close {
+  color: var(--text-color-secondary) !important;
+  margin-right: 0.2cm !important;
+}
+
+/* scroll area */
+.ui-multiselect-items-wrapper {
+  max-height: 90% !important;
+}
+
+@media (orientation: landscape) {
+  .ui-multiselect-items-wrapper {
+    max-height: 80% !important;
+  }
+}
+
+/* end of multi select */
+
+/* close icon on messages */
+
+.ui-messages-close {
+  top: 0.05cm !important;
+  right: 0.05cm !important;
+  border-color: var(--secondary-shadow-trans);
+  border-style: solid;
+  border-width: 0.03cm;
+  border-radius: 0.2cm !important;
+  padding: 0cm;
+  background-color: var(--secondary-dark);
+  color: var(--primary-color) !important;
+  width: 0.8cm;
+  height: 0.8cm;
+}
+
+.ui-messages-close i {
+  font-size: 0.5cm !important;
+  padding: 0.12cm !important;
+}
+
+.ui-messages ul {
+  padding-right: 0.2cm !important;
+}
+
+/*
+primeng button
+*/
+
+.ui-button,
+.p-button {
+  background-color: var(--secondary-dark) !important;
+  background: var(--secondary-dark) !important;
+  border: 1px solid var(--secondary-shadow-trans) !important;
+  color: var(--text-color-secondary) !important;
+}
+
+.ui-button-text {
+  color: var(--text-color-secondary) !important;
+
+  white-space: nowrap !important;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+}
+
+.ui-button:enabled:focus,
+.p-button:enabled:focus {
+  box-shadow: 0 0 0 0.2em var(--secondary-light) !important;
+}
+
+/*
+input field when selection 
+*/
+
+.ui-inputtext {
+  border: 1px solid var(--secondary-light) !important;
+}
+
+.ui-inputtext:enabled:focus:not(.ui-state-error) {
+  box-shadow: 0 0 0 0.2em var(--secondary-light) !important;
+  border-color: var(--secondary-dark) !important;
+}
+
+.ui-inputtext:enabled:hover:not(.ui-state-error) {
+  border-color: var(--secondary-dark) !important;
+}
+
+/*input field */
+.input-field {
+  width: 98.5%;
+  height: 0.9cm;
+  border-width: 0.02cm;
+  padding-right: 0.2cm;
+  padding-left: 0.2cm;
+  border-radius: 4px;
+  font-size: 14px;
+  color: #333333;
+  font-family: "Open Sans", "Helvetica Neue", "sans-serif";
+  border: 1px solid var(--secondary-light);
+}
+
+.input-field:focus {
+  box-shadow: 0 0 2px 2px var(--secondary-light) !important;
+  border-color: var(--secondary-dark) !important;
+}
+
+/* anchor */
+a {
+  color: var(--secondary-dark) !important;
+}
+
+/* panel */
+.ui-panel .ui-panel-titlebar {
+  border: 1px solid var(--secondary-dark) !important;
+  background-color: var(--secondary-dark) !important;
+  color: var(--text-color-secondary) !important;
+}
+
+.ui-panel .ui-panel-content {
+  border: 1px solid var(--secondary-light) !important;
+  background-color: var(--primary-light) !important;
+  color: var(--primary-color-text) !important;
+}
+/* input group addon */
+
+.ui-inputgroup .ui-inputgroup-addon {
+  border-color: var(--secondary-dark) !important;
+  background-color: var(--secondary-dark) !important;
+  color: var(--text-color-secondary) !important;
+}
+
+/* ui accordion */
+
+/* hover */
+.ui-accordion
+  .ui-accordion-header:not(.ui-state-disabled).ui-state-active:hover
+  a {
+  border: 1px solid var(--secondary-light) !important;
+  background-color: var(--secondary-middle) !important;
+  color: var(--primary-light) !important;
+}
+
+/* selected */
+.ui-accordion .ui-accordion-header:not(.ui-state-disabled).ui-state-active a {
+  background-color: var(--secondary-middle) !important;
+  border: var(--secondary-dark) !important;
+  color: var(--primary-color-text) !important;
+}
+
+.ui-accordion .ui-accordion-header a:focus {
+  box-shadow: 0 0 0 0.2em var(--secondary-shadow-trans) !important;
+}
+
+.ui-accordion .ui-accordion-header a {
+  background-color: var(--secondary-dark) !important;
+  color: var(--text-color-secondary) !important;
+  border: 1px solid var(--secondary-light) !important;
+}
+
+.ui-accordion .ui-accordion-content {
+  border: 1px solid var(--secondary-dark) !important;
+  background-color: var(--primary-light) !important;
+}
+
+.ui-accordion .ui-accordion-header a .ui-accordion-toggle-icon {
+  color: var(--text-color-secondary) !important;
+}
+/* progress bar */
+.ui-progressbar {
+  border: 1px solid var(--secondary-light);
+  height: 0.3cm !important;
+  background-color: var(--primary-middle);
+  border-radius: 0.1cm !important;
+}
+
+.ui-progressbar .ui-progressbar-value {
+  background: var(--secondary-dark) !important;
+}
+/* side menu*/
+.ui-sidebar {
+  background-color: var(--side-bar) !important;
+  border: 1px solid var(--secondary-middle) !important;
+  box-shadow: 0px 0px 10px 2px var(--secondary-shadow) !important;
+  color: var(--primary-color-text) !important;
+}
+
+/* radio button */
+.ui-radiobutton .ui-radiobutton-box.ui-state-active {
+  border-color: var(--secondary-light) !important;
+  background-color: var(--secondary-light) !important;
+}
+
+body .ui-radiobutton .ui-radiobutton-box.ui-state-focus {
+  box-shadow: 0 0 0 0.2em var(--secondary-shadow-trans) !important;
+}
+
+.ui-radiobutton-label {
+  color: var(--primary-color-text) !important;
+}
+
+/* dorp down */
+
+.ui-dropdown-panel .ui-dropdown-items .ui-dropdown-item.ui-state-highlight,
+.ui-dropdown-panel
+  .ui-dropdown-items
+  .ui-dropdown-item-group.ui-state-highlight {
+  background-color: var(--secondary-dark) !important;
+  color: var(--primary-light) !important;
+}
+
+.ui-dropdown:not(.ui-state-disabled).ui-state-focus {
+  border-color: var(--secondary-dark) !important;
+  box-shadow: 0 0 0 0.2em var(--secondary-light) !important;
+}
+
+.ui-dropdown .ui-dropdown-trigger .ui-dropdown-trigger-icon {
+  color: var(--secondary-dark) !important;
+}
+
+/* select button inside ToggleButtonComponent */
+
+.ui-selectbutton .ui-button.ui-state-active {
+  background-color: var(--ternirary-dark) !important;
+}
+
+.ui-selectbutton .ui-state-default {
+  background-color: var(--secondary-dark) !important;
+}
+
+/* input field */
+
+.filter-input {
+  border-color: var(--secondary-light) !important;
+  border-style: solid !important;
+  border-radius: 0.1cm !important;
+  outline: none !important;
+}
+
+/* checkbox */
+
+.ui-chkbox .ui-chkbox-box.ui-state-active {
+  border-color: var(--secondary-light) !important;
+  background-color: var(--secondary-dark) !important;
+  color: var(--primary-light) !important;
+}
+
+.ui-chkbox-box.ui-state-active {
+  border: 1px solid var(--secondary-light) !important;
+  background-color: var(--secondary-dark) !important;
+  color: var(--primary-color-text) !important;
+}
+
+.ui-chkbox .ui-chkbox-box {
+  border-color: var(--primary-middle) !important;
+}
+
+/* pdf viewer - prevent inner scroll inside the pdf viewer */
+
+.ng2-pdf-viewer-container {
+  overflow-x: unset !important;
+}
+
+/* toast */
+
+.ui-toast .ui-toast-message.ui-toast-message-info {
+  background-color: var(--secondary-dark) !important;
+  border: 1px solid var(--secondary-shadow-trans) !important;
+  color: var(--text-color-secondary) !important;
+}
+.ui-toast-close-icon {
+  color: var(--text-color-secondary) !important;
+}
+
+/* ui-message close button  */
+
+.ui-messages .ui-messages-summary {
+  margin-left: 0.3cm !important;
+  margin-right: 0.3cm !important;
+  display: none !important;
+}
+
+/* rotate */
+.rotate-180 {
+  transform: rotate(180deg);
+}
+
+.rotate-0 {
+  transform: rotate(0deg);
+}
+
+/* dialog */
+.ui-dialog .ui-dialog-titlebar {
+  background-color: var(--secondary-dark) !important;
+  color: var(--text-color-secondary) !important;
+  border: var(--secondary-shadow) !important;
+}
+
+.ui-dialog .ui-dialog-content,
+.ui-dialog .ui-dialog-footer {
+  background-color: var(--primary-light) !important;
+  color: var(--text-color) !important;
+  border-color: var(--primary-middle) !important;
+}
+
+.ui-dialog-titlebar-icon {
+  color: var(--text-color-secondary) !important;
+}
+
+.ui-dialog .ui-dialog-titlebar .ui-dialog-titlebar-icon:focus {
+  box-shadow: none !important;
+}
+
+/* list box */
+
+.ui-listbox {
+  background-color: var(--primary-light) !important;
+  color: var(--text-color) !important;
+  border: none !important;
+  border-color: var(--primary-middle) !important;
+}
+
+.ui-listbox .ui-listbox-list-wrapper {
+  background-color: var(--primary-light) !important;
+  color: var(--text-color) !important;
+  border: 1px solid var(--secondary-light) !important;
+}
+
+.ui-listbox .ui-listbox-list .ui-listbox-item {
+  background-color: var(--primary-light) !important;
+  color: var(--ternirary-color-text) !important;
+}
+
+.ui-listbox .ui-listbox-header {
+  background-color: var(--primary-light) !important;
+  color: var(--text-color) !important;
+  border: 1px solid var(--secondary-light) !important;
+}
+
+.ui-listbox .ui-listbox-list .ui-listbox-item.ui-state-highlight {
+  background-color: var(--secondary-dark) !important;
+  color: var(--text-color-secondary) !important;
+}
+
+.ui-listbox
+  .ui-listbox-header
+  .ui-listbox-filter-container
+  .ui-listbox-filter-icon {
+  color: var(--secondary-dark) !important;
+}
+
+.ui-listbox .ui-listbox-header .ui-listbox-filter-container {
+  width: 100% !important;
+}
+
+
+.ui-listbox .ui-listbox-list .ui-listbox-item:focus {
+  box-shadow: inset 0px 0px 2px 2px var(--secondary-middle) !important;
+}
+
+/*virtual scroll */
+
+.ui-virtualscroller-item {
+  border-bottom: 1px solid var(--primary-middle) !important;
+}
+
+.ui-virtualscroller-content {
+  border: 1px solid var(--primary-middle) !important;
+  color: var(--ternirary-color-text) !important;
+  background-color: var(--background-color) !important;
+}
+
+.submit {
+  min-width: 3cm;
+}
+
+/* calendar */
+.ui-datepicker {
+  min-width: 9.5cm !important;
+  background-color: var(--primary-middle) !important;
+  border: 1px solid var(--secondary-dark) !important;
+  min-width: 9.5cm;
+  box-shadow: 2px 2px 4px 4px var(--secondary-shadow-trans) !important;
+
+    -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.ui-datepicker table thead {
+  color: var(--ternirary-dark) !important;  
+}
+
+.ui-datepicker table tbody .ui-state-disabled {
+  color: var(--ternirary-middle) !important;
+  opacity: 0.6 !important;
+}
+
+.ui-datepicker .ui-state-default {
+  color: var(--secondary-dark) !important;
+  border: 1px solid var(--secondary-light);
+  border-radius: 0;
+}
+
+.ui-datepicker table td.ui-datepicker-today > a, body .ui-datepicker table td.ui-datepicker-today > span {
+  color: var(--secondary-light) !important; 
+  background-color:  transparent !important;
+}
+
+.ui-datepicker .ui-datepicker-header {
+  background-color: transparent !important;
+}
+
+.ui-datepicker .ui-datepicker-title select {
+  color: var(--ternirary-dark) !important;
+  border-radius: 5px !important;
+  min-width: 2.5cm !important;
+  text-align: center;
+  min-height: 0.8cm;
+  height: 0.8cm;
+  font-size: 0.4cm !important;
+  background: var(--primary-middle);
+  border: 1px solid var(--secondary-dark);
+}
+
+
+.ui-datepicker table td > a.ui-state-active {
+  background-color: var(--secondary-dar-trans) !important;
+  color: var(--text-color-secondary) !important;
+}
+
+
+.ui-datepicker .ui-datepicker-header .ui-datepicker-title select:focus {
+  box-shadow: inset 0px 0px 2px 2px var(--secondary-shadow-trans) !important;
+}

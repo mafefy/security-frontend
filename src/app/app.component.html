@@ -1,0 +1,22 @@
+<!-- 
+<img class="background" src="assets/images/landing/background.jpg">
+-->
+<ng-container *ngIf="appTranslated">
+    <div id="app-container" class="router-container">
+
+        <!-- marker for app views -->
+        <router-outlet></router-outlet>
+        <!-- background graphics -->
+        <img src="assets/images/background.jpg" class="background">
+        <div class="footer" class="footer shadow slideInUpSlow">
+            <img class="logo" src="assets/images/logo.png">
+            <h3 class="label">{{'app-name' |translate}}</h3>
+        </div>
+        <!-- background graphics -->
+
+    </div>
+
+    <!-- application progress bar-->
+
+
+</ng-container>

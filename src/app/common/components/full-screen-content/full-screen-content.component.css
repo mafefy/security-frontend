@@ -1,0 +1,10 @@
+
+    .full-screen {
+      position: fixed;
+      left: 0;
+      right: 0 ;
+      top: 0cm;
+      bottom: 0;
+      overflow-y: auto;
+    }
+    

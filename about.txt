@@ -1,0 +1,19 @@
+Security System:
+
+
+Provid authentication / authorization for microservices 
+
+For example consider : 
+
+you have  micro service A , micro service B
+
+1- You add ( username / password ) for Service A into Security system
+2- You add ( username / password ) for Service B into Security system 
+
+If A wants to connect B first
+
+1- A service login into Security System with ( user name / password ) credentials and get's JWT token
+
+2- Then A service uses the JWT token and connect to service B 
+
+3- Service B uses  Authorization library to verify the token and allow the communications

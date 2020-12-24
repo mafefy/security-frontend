@@ -1,0 +1,20 @@
+<ng-container *ngIf="dialogInfo">
+
+  <ng-container *ngIf="dialogInfo.subMessage">
+    <div  style="margin-top: 0.5cm;"  [innerHTML]="dialogInfo.subMessage "></div>
+    <div style="margin-top: 0.2cm;"  [innerHTML]="dialogInfo.messageTS | translate"></div>
+  </ng-container>
+
+  <ng-container *ngIf="!dialogInfo.subMessage">
+    <div style="margin-top: 0.5cm;"  [innerHTML]="dialogInfo.messageTS | translate"></div>
+  </ng-container>
+
+    <div class="buttons-footer" style="margin-top: 0.5cm">
+        <p-button [label]=" dialogInfo.confirmButton | translate" (onClick)="onConfirm()"></p-button>
+        <ng-container *ngIf="dialogInfo.cancelButton" >
+            <div style="width: 0.2cm"></div>
+            <p-button [label]=" dialogInfo.cancelButton | translate" (onClick)="onCancel()"></p-button>
+        </ng-container>
+    </div>
+
+</ng-container>

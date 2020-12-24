@@ -1,0 +1,21 @@
+.buttons {
+  position: absolute;
+  top: 0.2cm;
+  right: 0.2cm;
+  z-index: 2;
+
+}
+
+.title {
+  width: 100%;
+  text-align: center;
+  font-weight: bold;
+  color: var(--primary-color-text) !important;
+}
+
+.container {
+  position: relative;
+  padding-bottom: 0.2cm;
+  padding-top: 0.2cm;
+}
+

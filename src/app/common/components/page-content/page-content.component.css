@@ -1,0 +1,43 @@
+.page-content {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 1.4cm;
+  bottom: 0;
+  overflow-y: auto;
+  /* in case of footer*/
+  /*
+  padding-bottom: 1.6cm;
+  */
+  }
+
+  .page-content-full {
+    position: absolute;
+    left: 0;
+    right: 0 ;
+    top: 0cm;
+    bottom: 0;
+    overflow-y: auto;
+    z-index: 0;
+  }
+
+.responsive {
+
+}
+  @media only screen and (min-width: 640px) {
+
+      .responsive {
+        left: 15%;
+        right: 15% ;
+      }
+  }
+
+  @media only screen and (min-width: 1024px) {
+
+    .responsive {
+      left: 20% !important;
+      right: 20% !important;
+
+    }
+
+  }

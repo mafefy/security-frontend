@@ -1,0 +1,15 @@
+<p-toast position="center" life="100" [showTransitionOptions]="'200ms'" [hideTransitionOptions]="'100ms'" life="1000"></p-toast>
+
+<div class="container">
+
+  <div class="buttons" *ngIf="zoomLevel > 0">
+    <p-button [label]=" 'previous' | translate" (click)="onZoomOut()"></p-button>
+  </div>
+  <ng-container *ngIf="currentGraph() != null">
+    <p class="title">{{currentGraph().title}}</p>
+    <p-chart [type]="currentGraph().graphType" [data]="currentGraph()" (onDataSelect)="onDataSelected($event)" width="100vw"
+      [responsive]="false"  [options]=[graphOptions]></p-chart>
+
+  </ng-container>
+
+</div>

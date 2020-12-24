@@ -1,0 +1,45 @@
+<div *ngIf="showList" class="p-grid p-fluid container">
+  <div *ngIf="isMultiple" class="p-col-12 ">
+    <p class="options-label" >{{label}}</p>
+
+    <button (click)="showList =true" pButton type="button" [label]="getSelectionsLabel()"></button>
+    <button (click)="showList =true" pButton type="button" icon="pi pi-angle-down" iconPos="center"></button>
+
+  </div>
+
+</div>
+
+
+<!-- list dialog -->
+<p-dialog position="center" [(visible)]="showList" appendTo="body" [modal]="true" [dismissableMask]="true"
+  [draggable]="false" styleClass="app-dialog" (onHide)="onClosed()" (onClose)="onClosed()">
+  <p-header>
+    {{ 'advanced-search' | translate}}
+  </p-header>
+
+  <!-- list box -->
+  <div *ngIf="showList" class="p-grid p-fluid container">
+
+    <div *ngIf="isMultiple" class="p-col-12 ">
+      <ng-container *ngFor="let option of listOptions">
+        <p-checkbox (onChange)="onOptionsSelected()" [name]="option.label || option.name" [value]="option.data"
+          [(ngModel)]="selectedOptions">
+        </p-checkbox>
+      </ng-container>
+    </div>
+
+    <div *ngIf="!isMultiple" class="p-col-12 ">
+      <ng-container *ngFor="let option of listOptions">
+        <p-radioButton [value]="option.data" (onChange)="onOptionSelected()" [name]="option.label || option.name"
+          [(ngModel)]="selectedOption">
+        </p-radioButton>
+
+      </ng-container>
+    </div>
+
+  </div>
+
+  <p-footer>
+    <button type="button" (click)="onDone()" pButton [label]="'ok' | translate" icon="pi pi-check"></button>
+  </p-footer>
+</p-dialog>

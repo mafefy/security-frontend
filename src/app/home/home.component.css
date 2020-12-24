@@ -1,0 +1,82 @@
+
+/* menu style */
+.menu-content-container {
+    margin-top:0.1cm;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+    overflow-y: auto;
+    position: absolute;
+    left: 0;
+    right: 0;
+}
+
+
+.menu-header {
+    display: flex;
+}
+
+.menu-header .logo {
+    height: 1.3cm;
+}
+
+.menu-header .title {
+    font-weight: bold;
+    font-size: 0.4cm;
+    margin: 0.1cm;
+    margin-top: 0.4cm;
+    color: var(--ternirary-light);
+}
+
+.side-bar {
+    width: 3cm;
+    padding: 0 !important;
+    margin: 0 !important;
+    background-color: #0116197a;
+}
+
+
+
+.departments {
+    width: 100%;
+}
+
+
+.card {
+    width: 100%;
+    margin-bottom: 0.3cm;
+    background-color: var(--primary-middle);
+    border: 2px solid var(--secondary-shadow-trans);
+    border-radius: 0.3cm;
+    padding: 0.3cm;
+}
+.card .title {
+    font-weight: bold;
+    font-size: 0.38cm;
+}
+
+
+
+.selected-department {
+    white-space: nowrap !important;
+    overflow: hidden  !important;
+    text-overflow: ellipsis  !important;
+    margin-bottom: 0.4cm;
+    margin-top: 0.2cm;
+}
+.select-department {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 0.3cm; 
+    margin-bottom: 0.5cm;
+}
+
+.sign-out {
+    position: absolute;
+    right: 0.3cm;
+    top: 0cm;
+    border-color: var(--ternirary-dark) !important;
+    border-width: 2px !important;
+    background-color: var(--ternirary-dark) !important;
+    color: var(--primary-light) !important;
+}

@@ -1,0 +1,32 @@
+<p-toast position="center" [showTransitionOptions]="'200ms'" [hideTransitionOptions]="'100ms'"></p-toast>
+
+
+
+<p-table [value]="users" [lazy]="true" (onLazyLoad)="loadUsersList($event)" [paginator]="true" [rows]="pageSize"
+  [totalRecords]="totalRecords" [loading]="loading">
+
+  <ng-template pTemplate="header">
+    <tr>
+      <th>{{'name' | translate}}</th>
+      <th class="option-cell">{{ 'suspend' | translate}}</th>
+      <th class="option-cell">{{ 'delete' | translate }}</th>
+      <th class="option-cell">{{ 'change-password' | translate}}</th>
+    </tr>
+  </ng-template>
+
+  <ng-template pTemplate="body" let-user>
+    <tr>
+      <td>
+        <p class="system-name">{{user.name}} </p>
+      </td>
+      <td><button (click)="suspendSystem(user)" pButton type="button"
+          [label]="(user.suspended ? 'activate' : 'suspend') | translate "></button>
+      </td>
+      <td><button (click)="deleteSystem(user)" pButton type="button" [label]="'delete' | translate "></button>
+      </td>
+      <td><button (click)="changePassword(user)" pButton type="button" [label]="'change' | translate "></button>
+      </td>
+    </tr>
+  </ng-template>
+
+</p-table>

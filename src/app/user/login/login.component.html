@@ -1,0 +1,100 @@
+<centered>
+
+  <!-- install pwa button -->
+  <div *ngIf="isPWAInstallable" class="install-button">
+    <button pButton type="button" class="ui-button-raised ui-button-rounded" icon="pi pi-download" iconPos="left"
+      (click)="showInstallDialog = true"></button>
+  </div>
+
+  <div class="view-container">
+
+    <!-- user / password form-->
+    <form  [formGroup]="userform" (ngSubmit)="onLogin(userform.value)" class="shadow slideInUp">
+
+      <p-panel [header]=" 'user-login' | translate">
+        <div class="p-grid p-fluid " style="margin: 10px 0px">
+          <!-- messages services -->
+          <div class="p-col-12 no-padding">
+            <p-messages enableService="true" [showTransitionOptions]="'300ms'" [hideTransitionOptions]="'300ms'">
+            </p-messages>
+          </div>
+
+
+          <!-- account user name-->
+
+          <div class="p-col-12 ">
+            {{'user-account'| translate}}
+          </div>
+
+          <div class="p-col-12">
+            <div class="p-inputgroup">
+              <span class="p-inputgroup-addon"><i class="pi pi-user"></i></span>
+              <input type="text" pInputText type="text" formControlName="name"
+                [placeholder]="'enter-user-account' | translate">
+            </div>
+          </div>
+
+
+          <div class="p-col-12 ">
+            <p-message severity="error"
+              [text]="userform.controls['name'].errors['required'] ? ('user-account-required' | translate) : userform.controls['name'].errors['minlength'] ? ('user-account-validation' | translate) : ''"
+              *ngIf="!userform.controls['name'].valid && userform.controls['name'].dirty"></p-message>
+          </div>
+
+
+          <!-- password-->
+
+          <div class="p-col-12">
+            {{ 'user-password'| translate}}
+          </div>
+
+          <div class="p-col-12">
+            <div class="p-inputgroup">
+              <span class="p-inputgroup-addon"><i class="pi pi-lock"></i></span>
+              <input pInputText type="password" formControlName="password"
+                [placeholder]="'enter-user-password' | translate">
+            </div>
+          </div>
+
+          <div class="p-col-12 ">
+            <p-message severity="error"
+              [text]="userform.controls['password'].errors['required'] ? ('user-password-required' | translate) : userform.controls['password'].errors['minlength'] ? ('user-password-validation' | translate) : ''"
+              *ngIf="!userform.controls['password'].valid&&userform.controls['password'].dirty">
+            </p-message>
+          </div>
+
+
+          <!-- submit button-->
+
+          <div class="p-col-12">
+            <p-button type="submit" [label]="'login' | translate" [disabled]="!userform.valid"></p-button>
+          </div>
+
+
+        </div>
+      </p-panel>
+    </form>
+    <!-- end of sms code form-->
+  </div>
+</centered>
+
+
+
+<p-dialog position="center" [(visible)]="showInstallDialog" appendTo="body" [modal]="true" [dismissableMask]="true"
+  [draggable]="false" styleClass="app-dialog">
+  <p-header>
+    {{ 'install' | translate}}
+  </p-header>
+  <div class="install-container">
+    <img src="assets/icons/icon.png" class="icon">
+    <p class="install-message">
+      {{ 'install-message' | translate}}
+    </p>
+  </div>
+
+  <p-footer>
+    <div class="p-grid p-justify-even">
+      <p-button [label]=" 'install' | translate " (onClick)="onInstall()"></p-button>
+    </div>
+  </p-footer>
+</p-dialog>

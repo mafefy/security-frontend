@@ -1,0 +1,39 @@
+.blue-mode {
+  --background-color: rgb(233, 233, 233);
+  --primary-dark: rgb(41, 41, 41);
+  --primary-middle: rgb(219, 219, 219);
+  --primary-light: rgb(255, 255, 255);
+  --primary-shadow: rgba(136, 136, 136, 0.23);
+
+  /* secondary color */
+  --secondary-dark: #0d7182;
+  --secondary-dar-trans: #00336d78;
+  --secondary-middle: #32879c;
+  --secondary-light: #61a0b3;
+  --secondary-shadow: #002221;
+  --secondary-shadow-trans: #0022215e;
+
+  /* secondary color */
+  --ternirary-dark: #e68a44;
+  --ternirary-middle: #eea76d;
+  --ternirary-light: #f3c9a9;
+  --ternirary-shadow: #331803;
+
+  --side-bar: var(--secondary-dark);
+  --danger: rgb(194, 0, 0);
+  --danger-trans: #ff00005e;
+
+  /* primeng */
+
+  --layer-0: var(--primary-light) !important;
+  --layer-1: var(--secondary-middle) !important;
+  --layer-2: var(--ternirary-middle) !important;
+  --primary-color: var(--primary-light) !important;
+
+  --text-color: rgb(41, 41, 41) !important;
+  --primary-color-text: rgb(41, 41, 41) !important;
+  --text-color-secondary: #ffffff !important;
+  --ternirary-color-text: var(--primary-color-text);
+  --calendar-color-text: var(--secondary-dark);
+  color: var(--primary-color-text);
+}

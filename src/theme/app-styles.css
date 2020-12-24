@@ -1,0 +1,815 @@
+
+@font-face {
+  font-family: "benchnineregular";
+  src: url("/assets/fonts/bench-nine/benchnine-regular-webfont.woff2")
+      format("woff2"),
+    url("/assets/fonts/bench-nine/benchnine-regular-webfont.woff")
+      format("woff"),
+    url("/assets/fonts/bench-nine/benchnine-regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "EBGaramond";
+  src: url("/assets/fonts/EB_Garamond/EBGaramond-VariableFont_wght.ttf");
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+* {
+  font-family: EBGaramond;
+  font-weight: normal;
+  font-style: normal;
+}
+
+body {
+  /*
+  background-color: var(--background-color) ;
+  */
+  margin: 0;
+
+  /* prevent selection */
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  background-color: var(--background-color);
+}
+
+.no-padding {
+  padding: 0 !important;
+}
+
+
+.padding {
+  padding-left: 2%;
+  padding-right: 2%;
+}
+
+
+
+@media only screen and (min-width: 640px) {
+  .padding {
+    padding-left: 4%;
+    padding-right: 4%;
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  .padding {
+    padding-left: 8%;
+    padding-right: 8%;
+  }
+}
+
+/* p-grid   reduce the padding */
+
+.p-col-1, .p-col-2, .p-col-3, .p-col-4, .p-col-5, .p-col-6, .p-col-7, .p-col-8, .p-col-9, .p-col-10, .p-col-11, .p-col-12 {
+  padding: 0.3rem !important;
+}
+
+
+/* privacy colors */
+.high-privacy {
+  /*
+  -webkit-box-shadow: inset 0px 0px 10px 2px rgba(255, 0, 0, 0.41) !important;
+  -moz-box-shadow: inset 0px 0px 10px 2px rgba(255, 0, 0, 0.41) !important;
+  box-shadow: inset 0px 0px 10px 2px rgba(255, 0, 0, 0.41) !important;
+  */
+  border-left: 5px solid var(--danger-trans);
+
+  /*
+  -webkit-animation-name: flash;
+  animation-name: flash;
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+  animation-iteration-count: 2;
+  */
+}
+
+.medium-privacy {
+  border-left: 5px solid var(--ternirary-light);
+/*
+  -webkit-animation-name: flash;
+  animation-name: flash;
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+  animation-iteration-count: 1;
+  */
+}
+
+.low-privacy {
+  border-left: 5px solid var(--secondary-dark);
+
+  /*
+  -webkit-animation-name: flash;
+  animation-name: flash;
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+  animation-iteration-count: 1;
+  */
+}
+
+.shadow {
+  box-shadow: 2px 2px 4px 4px var(--primary-shadow);
+  border-style: solid;
+  border-color: var(--primary-middle);
+  border-width: 0.01cm;
+  border-radius: 0.2cm;
+}
+
+.margin-auto {
+  margin: auto;
+}
+.text-centered {
+  text-align: center;
+}
+
+/* dialogs*/
+.app-dialog-bigger {
+  width: 80%;
+  min-height: 70%;
+}
+
+.app-dialog {
+  width: 80%;
+}
+
+
+@media (orientation: landscape) {
+  .app-dialog {
+    width: 50%;
+  }
+
+  .app-dialog-bigger {
+    width: 50%;
+  }
+
+
+}
+
+.app-dialog-small {
+  width: 80%;
+}
+
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) and (orientation: portrait) {
+  .app-dialog-small {
+    width: 80%;
+  }
+}
+
+@media only screen and (min-width: 768px) and (orientation: landscape ){
+  .app-dialog-small {
+    width: 70%;
+  }
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) and (orientation: portrait) {
+  .app-dialog-small {
+    width: 70%;
+  }
+}
+
+@media only screen and (min-width: 992px) and (orientation: landscape) {
+  .app-dialog-small {
+    width: 60%;
+  }
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+  .app-dialog-small {
+    width: 50%;
+  }
+}
+
+
+
+
+.clickable {
+  cursor: pointer;
+}
+
+.clickable:hover {
+  -webkit-animation-name: fadeInBounce;
+  animation-name: fadeInBounce;
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+
+/*
+the progress bar in correspondences
+*/
+.ui-progressbar {
+  height: 0.4cm !important;
+}
+
+
+
+/* multi select menu */
+
+.p-multiselect {
+  background: var(--primary-light) !important;
+  border: 1px solid var(--secondary-dark) !important;
+}
+
+.p-multiselect .p-multiselect-label {
+  color: var(--primary-color-text) !important;
+}
+
+.p-multiselect .p-multiselect-trigger {
+  background-color: var(--secondary-dark) !important;
+  color: var(--text-color-secondary) !important;
+}
+
+.p-multiselect-panel .p-multiselect-header {
+  border-bottom: 1px solid var(--secondary-light) !important;
+  background-color: var(--secondary-dark) !important;
+}
+
+.p-multiselect-panel .p-multiselect-items .p-multiselect-item:focus {
+  box-shadow: inset 0 0 0 0.15rem var(--secondary-dark) !important;
+}
+
+.p-multiselect-panel {
+  top: 10% !important;
+  left: 10% !important;
+  right: 10% !important;
+  bottom: 20% !important;
+  border-color: var(--secondary-dark) !important;
+  border-width: 0.1cm !important;
+  border-style: solid !important;
+  border-radius: 0.3cm !important;
+  background-color: gray;
+  box-shadow: 0px 0px 8px 4px var(--secondary-shadow-trans) !important;
+  background-color: var(--primary-light) !important;
+}
+
+/* element */
+.p-multiselect-item {
+  min-height: 0.9cm !important;
+  background-color: #f1f1f1 !important;
+  margin-top: 0.1cm !important;
+}
+
+.p-state-highlight {
+  color: var(--secondary-dark) !important;
+}
+
+.p-multiselect-panel
+  .ui-multiselect-header
+  .ui-multiselect-filter-container
+  .ui-multiselect-filter-icon {
+  color: var(--secondary-dark) !important;
+}
+
+.p-multiselect-panel .p-multiselect-items .p-multiselect-item {
+  color: var(--primary-color-text) !important;
+  background-color: var(--primary-light) !important;
+}
+
+.p-multiselect-panel
+  .p-multiselect-items
+  .p-multiselect-item.p-state-highlight {
+  background-color: var(--secondary-dark) !important;
+  color: var(--primary-color-text) !important;
+  background-color: var(--secondary-middle) !important;
+}
+
+.p-multiselect-header .p-multiselect-close {
+  color: var(--text-color-secondary) !important;
+  margin-right: 0.2cm !important;
+}
+
+/* scroll area */
+.p-multiselect-items-wrapper {
+  max-height: 90% !important;
+}
+
+@media (orientation: landscape) {
+  .p-multiselect-items-wrapper {
+    max-height: 80% !important;
+  }
+}
+
+/* end of multi select */
+
+/* close icon on messages */
+
+.ui-messages-close {
+  top: 0.05cm !important;
+  right: 0.05cm !important;
+  border-color: var(--secondary-shadow-trans);
+  border-style: solid;
+  border-width: 0.03cm;
+  border-radius: 0.2cm !important;
+  padding: 0cm;
+  background-color: var(--secondary-dark);
+  color: var(--primary-color) !important;
+  width: 0.8cm;
+  height: 0.8cm;
+}
+
+.ui-messages-close i {
+  font-size: 0.5cm !important;
+  padding: 0.12cm !important;
+}
+
+.ui-messages ul {
+  padding-right: 0.2cm !important;
+}
+
+/*primeng button */
+
+.ui-button,
+.p-button {
+  background-color: var(--secondary-dark) !important;
+  background: var(--secondary-dark) !important;
+  border: 1px solid var(--secondary-shadow-trans) !important;
+  color: var(--text-color-secondary) !important;
+}
+
+.ui-button-text {
+  color: var(--text-color-secondary) !important;
+
+  white-space: nowrap !important;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+}
+
+.ui-button:enabled:focus,
+.p-button:enabled:focus {
+  box-shadow: 0 0 0 0.2em var(--secondary-light) !important;
+}
+
+
+
+
+/*
+input field when selection
+*/
+
+.p-inputtext {
+  border: 1px solid var(--secondary-light) !important;
+}
+
+.p-inputtext:enabled:focus:not(.ui-state-error) {
+  box-shadow: 0 0 0 0.2em var(--secondary-light) !important;
+  border-color: var(--secondary-dark) !important;
+}
+
+.p-inputtext:enabled:hover:not(.ui-state-error) {
+  border-color: var(--secondary-dark) !important;
+}
+
+/*input field */
+.input-field {
+  width: 98.5%;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-size: 1rem;
+  color: #495057;
+  background: #ffffff;
+  padding: 0.5rem 0.5rem;
+  border: 1px solid #ced4da;
+  transition: background-color 0.2s, color 0.2s, border-color 0.2s, box-shadow 0.2s;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border-radius: 3px;
+
+}
+
+.p-inputtext:enabled:focus ,.input-field:focus {
+  outline: 0 none;
+  outline-offset: 0;
+  box-shadow: 0 0 2px 2px var(--secondary-light) !important;
+  border-color: var(--secondary-dark) !important;
+}
+
+.p-inputtext:enabled:hover ,.input-field:hover{
+  border-color: var(--secondary-middle) !important;
+}
+
+/* anchor */
+a {
+  color: var(--secondary-dark) !important;
+}
+
+/* panel */
+.p-panel .p-panel-header {
+  border: 1px solid var(--secondary-dark) !important;
+  background-color: var(--secondary-dark) !important;
+  color: var(--text-color-secondary) !important;
+}
+
+.p-panel .p-panel-content {
+  border: 1px solid var(--secondary-light) !important;
+  background-color: var(--primary-light) !important;
+  color: var(--primary-color-text) !important;
+}
+/* input group addon */
+
+.p-inputgroup .p-inputgroup-addon {
+  border-color: var(--secondary-dark) !important;
+  background-color: var(--secondary-dark) !important;
+  color: var(--text-color-secondary) !important;
+}
+
+/* ui accordion */
+
+/* hover */
+.p-accordion
+  .p-accordion-header:not(.p-state-disabled).p-state-active:hover
+  a {
+  border: 1px solid var(--secondary-light) !important;
+  background-color: var(--secondary-middle) !important;
+  color: var(--primary-light) !important;
+}
+
+/* selected */
+.p-accordion .p-accordion-header:not(.p-state-disabled).p-state-active a {
+  background-color: var(--secondary-middle) !important;
+  border: var(--secondary-dark) !important;
+  color: var(--primary-color-text) !important;
+}
+
+.p-accordion .p-accordion-header a:focus {
+  box-shadow: 0 0 0 0.2em var(--secondary-shadow-trans) !important;
+}
+
+.p-accordion .p-accordion-header a {
+  background-color: var(--secondary-dark) !important;
+  color: var(--text-color-secondary) !important;
+  border: 1px solid var(--secondary-light) !important;
+}
+
+.p-accordion .p-accordion-content {
+  border: 1px solid var(--secondary-dark) !important;
+  background-color: var(--primary-light) !important;
+}
+
+.p-accordion .p-accordion-header a .p-accordion-toggle-icon {
+  color: var(--text-color-secondary) !important;
+}
+/* progress bar */
+.p-progressbar {
+  border: 1px solid var(--secondary-light);
+  height: 0.3cm !important;
+  background-color: var(--primary-middle);
+  border-radius: 0.1cm !important;
+}
+
+.p-progressbar .p-progressbar-value {
+  background: var(--secondary-dark) !important;
+}
+/* side menu*/
+.p-sidebar {
+  background-color: var(--side-bar) !important;
+  border: 1px solid var(--secondary-middle) !important;
+  box-shadow: 0px 0px 10px 2px var(--secondary-shadow) !important;
+  color: var(--primary-color-text) !important;
+}
+
+/* side-bar */
+.p-sidebar-content {
+  height: 100%;
+}
+
+
+/* radio button */
+.p-radiobutton .p-radiobutton-box.p-highlight  {
+  border-color: var(--secondary-light) !important;
+  background-color: var(--secondary-light) !important;
+}
+
+body .p-radiobutton .p-radiobutton-box.p-state-focus {
+  box-shadow: 0 0 0 0.2em var(--secondary-shadow-trans) !important;
+}
+
+.p-radiobutton-label {
+  color: var(--primary-color-text) !important;
+}
+
+/* dorp down */
+
+.p-dropdown-panel .p-dropdown-items .p-dropdown-item.p-state-highlight,
+.p-dropdown-panel
+  .p-dropdown-items
+  .p-dropdown-item-group.p-state-highlight {
+  background-color: var(--secondary-dark) !important;
+  color: var(--primary-light) !important;
+}
+
+.p-dropdown:not(.ui-state-disabled).p-state-focus {
+  border-color: var(--secondary-dark) !important;
+  box-shadow: 0 0 0 0.2em var(--secondary-light) !important;
+}
+
+.p-dropdown .p-dropdown-trigger .p-dropdown-trigger-icon {
+  color: var(--secondary-dark) !important;
+}
+
+/* select button inside ToggleButtonComponent */
+
+.p-selectbutton .p-button.ui-state-active {
+  background-color: var(--ternirary-dark) !important;
+}
+
+
+.p-selectbutton .p-button.p-highlight {
+  background: var(--ternirary-dark) !important;
+  border-color: var(--ternirary-middle) !important;
+  color: var(--text-color-secondary) !important;
+}
+
+.p-selectbutton .p-button.p-highlight:hover {
+  background: var(--ternirary-dark) !important;
+  border-color: var(--ternirary-middle) !important;
+  color: var(--text-color-secondary) !important;
+}
+
+
+.p-button:focus {
+  box-shadow: none !important;
+}
+
+.p-selectbutton .p-state-default {
+  background-color: var(--secondary-dark) !important;
+}
+
+/* input field */
+
+.filter-input {
+  border-color: var(--secondary-light) !important;
+  border-style: solid !important;
+  border-radius: 0.1cm !important;
+  outline: none !important;
+}
+
+/* checkbox */
+
+
+
+.p-checkbox-box, p-checkbox {
+  height: 1cm;
+}
+.p-checkbox {
+  transform: scale(1.5) !important;
+}
+
+.p-checkbox .p-checkbox-box.p-highlight {
+  border-color: var(--secondary-dark) !important;
+  background-color: var(--secondary-dark) !important;
+}
+
+.p-checkbox .p-checkbox-box:not(.p-disabled).p-focus {
+  border-color: var(--secondary-light) !important;
+  box-shadow: inset 0px 0px 2px 2px var(--secondary-light) !important;
+}
+
+.p-checkbox-label {
+  color: var(--primary-color-text) !important;
+}
+
+/* pdf viewer - prevent inner scroll inside the pdf viewer */
+
+.ng2-pdf-viewer-container {
+  overflow-x: unset !important;
+}
+
+/* toast */
+
+.p-toast .p-toast-message.p-toast-message-info {
+  background-color: var(--secondary-dark) !important;
+  border: 1px solid var(--secondary-shadow-trans) !important;
+  color: var(--text-color-secondary) !important;
+}
+.p-toast-close-icon {
+  color: var(--text-color-secondary) !important;
+}
+
+/* ui-message  */
+
+.p-message {
+  margin: 0 !important;
+}
+
+
+/* rotate */
+.rotate-180 {
+  transform: rotate(180deg);
+}
+
+.rotate-0 {
+  transform: rotate(0deg);
+}
+
+/* dialog */
+.p-dialog , .p-dialog .p-dialog-content , .p-dialog .p-dialog-footer , .p-dialog .p-dialog-header{
+  background-color: var(--primary-light) !important;
+  color: var(--primary-color-text) !important;
+  border: var(--secondary-shadow) !important;
+}
+.p-dialog-header-close-icon {
+  color: var(--primary-color-text) !important;
+
+}
+
+.p-dialog-titlebar-icon {
+  color: var(--text-color-secondary) !important;
+}
+
+.p-dialog .p-dialog-titlebar .p-dialog-titlebar-icon:focus {
+  box-shadow: none !important;
+}
+
+/* list box */
+
+.p-listbox {
+  background-color: var(--primary-light) !important;
+  color: var(--text-color) !important;
+  border: none !important;
+  border-color: var(--primary-middle) !important;
+}
+
+.p-listbox .p-listbox-list-wrapper {
+  background-color: var(--secondary-dark) !important;
+    color: var(--text-color-secondary) !important;
+    border: 1px solid var(--secondary-light) !important;
+
+}
+
+.p-listbox .p-listbox-list {
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+}
+
+.p-listbox .p-listbox-list .p-listbox-item {
+  background-color: var(--secondary-middle) !important;
+  color: var(--text-color-secondary) !important;
+  border: 1px solid var(--secondary-light) !important;
+}
+
+.p-listbox .p-listbox-header {
+  background-color: var(--primary-light) !important;
+  color: var(--text-color) !important;
+  border: 1px solid var(--secondary-light) !important;
+}
+
+.p-listbox .p-listbox-list .p-listbox-item.p-state-highlight {
+  background-color: var(--secondary-dark) !important;
+  color: var(--text-color-secondary) !important;
+}
+
+.p-listbox
+  .p-listbox-header
+  .p-listbox-filter-container
+  .p-listbox-filter-icon {
+  color: var(--secondary-dark) !important;
+}
+
+.p-listbox .p-listbox-header .p-listbox-filter-container {
+  width: 100% !important;
+}
+
+
+.p-listbox .p-listbox-list .p-listbox-item:focus {
+  box-shadow: inset 0px 0px 2px 2px var(--secondary-middle) !important;
+}
+
+/*virtual scroll */
+
+.p-virtualscroller-item {
+  border-bottom: 1px solid var(--primary-middle) !important;
+}
+
+.p-virtualscroller-content {
+  border: 1px solid var(--primary-middle) !important;
+  color: var(--ternirary-color-text) !important;
+  background-color: var(--background-color) !important;
+}
+
+.submit {
+  min-width: 3cm;
+}
+
+/* calendar */
+.p-datepicker {
+  min-width: 9.5cm !important;
+  background-color: var(--primary-middle) !important;
+  border: 1px solid var(--secondary-dark) !important;
+  min-width: 9.5cm;
+  box-shadow: 2px 2px 4px 4px var(--secondary-shadow-trans) !important;
+  color: var(--calendar-color-text) !important;
+    -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.p-datepicker table thead {
+  color: var(--ternirary-dark) !important;
+}
+
+.p-disabled, .p-component:disabled {
+  opacity: 0.4 !important;
+}
+
+.p-datepicker .p-state-default {
+  color: var(--secondary-dark) !important;
+  border: 1px solid var(--secondary-light);
+  border-radius: 0;
+}
+
+.p-datepicker table td.p-datepicker-today > span  {
+  color: var(--ternirary-dark) !important;
+  background-color:  transparent !important;
+}
+
+.p-datepicker .p-datepicker-header {
+  background-color: transparent !important;
+}
+
+
+.p-datepicker table td > span.p-highlight {
+  color: var(--text-color-secondary) !important;
+  background: var(--secondary-dark) !important;
+}
+
+.p-datepicker .p-datepicker-title select {
+  color: var(--ternirary-dark) !important;
+  border-radius: 5px !important;
+  min-width: 2.5cm !important;
+  text-align: center;
+  min-height: 0.8cm;
+  height: 0.8cm;
+  font-size: 0.4cm !important;
+  background: var(--primary-middle);
+  border: 1px solid var(--secondary-dark);
+}
+
+
+.p-datepicker table td > a.p-state-active {
+  background-color: var(--secondary-dar-trans) !important;
+  color: var(--text-color-secondary) !important;
+}
+
+
+.p-datepicker .p-datepicker-header .p-datepicker-title select:focus {
+  box-shadow: inset 0px 0px 2px 2px var(--secondary-shadow-trans) !important;
+}
+
+
+
+.float-left {
+  float: left;
+}
+
+.float-right {
+  float: right;
+}
+
+
+/* slider */
+.p-slider.p-slider-vertical .p-slider-handle {
+  width: 0.8cm !important;
+  height: 0.8cm !important;
+  margin-left: -0.4cm !important;
+  margin-top: -0.4cm !important;
+
+}
+
+.p-slider-horizontal .p-slider-range {
+  height: 0.3cm !important;
+  margin-top: 0.25cm !important;
+}
+
+.p-slider.p-slider-horizontal .p-slider-handle {
+  width: 0.8cm !important;
+  height: 0.8cm !important;
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+  top: 0 !important;
+}
+
+.p-slider.p-slider-horizontal {
+  height: 1cm !important;
+  background-color: transparent !important;
+}

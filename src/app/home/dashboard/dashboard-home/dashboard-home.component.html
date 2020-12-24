@@ -1,0 +1,18 @@
+<page>
+
+  <nav-header [back]="true" [navigate]="true" [title]="'dashboard' | translate">
+  </nav-header>
+
+  <page-content [transparent]="false">
+
+    <div #viewersContainer>
+
+      <ng-container *ngFor="let graph of graphs">
+        <graph-view [graph]="graph" (onUpdate)="fixedContainerHeight()"></graph-view>
+      </ng-container>
+    </div>
+  </page-content>
+
+
+
+</page>
