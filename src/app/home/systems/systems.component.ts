@@ -14,10 +14,11 @@ import { SystemsService } from '../service/systems.service';
 })
 export class SystemsComponent implements OnInit {
 
-  public pageSize = 10;
+  public pageSize = 2;
   public users: User[];
   public loading = false;
   public totalRecords: number;
+  public systemId: string;
 
   constructor(
     public cs: CommonService,
@@ -31,6 +32,7 @@ export class SystemsComponent implements OnInit {
     this.lastIndex = event.first;
     this.loading = true;
     let request = new UsersListRequest( (event.first / event.rows), event.rows);
+    request.name = this.systemId;
     this.systemsService.systemsList(request, (response: UsersListResponse) => {
       this.users = response.users;
       this.totalRecords = response.totalRecords;
@@ -59,7 +61,7 @@ export class SystemsComponent implements OnInit {
   }
 
   public suspendSystem(user: User) {
-    this.systemsService.suspendSystem( user, !user.suspended , () => {
+    this.systemsService.suspendAccount( user, !user.suspended , () => {
       this.cs.dialogsService.confirm(new DialogInfo('done-successfully', 'action-successfully',
       () => {
         this.refreshUsersList();
@@ -81,4 +83,13 @@ export class SystemsComponent implements OnInit {
     this.cs.navigation.openChangePassword();
   }
 
+  public onSearch() {
+    this.refreshUsersList();
+  }
+
+  public onSearchChanged() {
+    if ( ! this.systemId) {
+      this.refreshUsersList();
+    }
+  }
 }

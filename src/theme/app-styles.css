@@ -506,7 +506,11 @@ body .p-radiobutton .p-radiobutton-box.p-state-focus {
 }
 
 /* dorp down */
+.p-dropdown {
+  min-width: 6cm;
 
+
+}
 .p-dropdown-panel .p-dropdown-items .p-dropdown-item.p-state-highlight,
 .p-dropdown-panel
   .p-dropdown-items
@@ -523,6 +527,8 @@ body .p-radiobutton .p-radiobutton-box.p-state-focus {
 .p-dropdown .p-dropdown-trigger .p-dropdown-trigger-icon {
   color: var(--secondary-dark) !important;
 }
+
+
 
 /* select button inside ToggleButtonComponent */
 

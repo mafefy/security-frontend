@@ -8,15 +8,41 @@
 
 
     <centered>
-      <form [formGroup]="userform" (ngSubmit)="onSubmit(userform.value)" class="spacer shadow fadeIn">
+      <form [formGroup]="userform" (ngSubmit)="onSubmit(userform.value)" class=" shadow fadeIn">
 
-        <p-panel [header]=" 'system-register' | translate">
+        <p-panel [header]=" 'user-register' | translate">
           <div class="p-grid p-fluid" style="margin: 10px 0px">
             <!-- messages services -->
             <div class="p-col-12">
               <p-messages enableService="true" [showTransitionOptions]="'300ms'" [hideTransitionOptions]="'300ms'">
               </p-messages>
             </div>
+
+
+
+            <!-- system id -->
+
+            <div class="p-col-12">
+              {{'system-id'| translate}}
+            </div>
+
+
+
+            <div class="p-col-12">
+              <div class="p-inputgroup">
+                <span class="p-inputgroup-addon"><i class="pi pi-user"></i></span>
+                <input type="text" pInputText type="text" formControlName="systemId" class="input-field"
+                  [placeholder]="'enter-system-id' | translate">
+              </div>
+            </div>
+
+
+            <div class="p-col-12">
+              <p-message severity="error"
+                [text]="userform.controls['systemId'].errors['required'] ? ('system-id-required' | translate) : userform.controls['systemId'].errors['minlength'] ? ('system-id-validation' | translate) : ''"
+                *ngIf="!userform.controls['systemId'].valid && userform.controls['systemId'].dirty"></p-message>
+            </div>
+
 
 
             <!-- account user name-->
@@ -31,7 +57,7 @@
               <div class="p-inputgroup">
                 <span class="p-inputgroup-addon"><i class="pi pi-user"></i></span>
                 <input type="text" pInputText type="text" formControlName="name" class="input-field"
-                  [placeholder]="'enter-system-account' | translate"  autocomplete="off" readonly
+                  [placeholder]="'enter-system-account' | translate" autocomplete="off" readonly
                   onfocus="this.removeAttribute('readonly');">
               </div>
             </div>
@@ -74,7 +100,7 @@
             <div class="p-col-12">
               <div class="p-inputgroup">
                 <span class="p-inputgroup-addon"><i class="pi pi-lock"></i></span>
-                <input pInputText type="password" formControlName="confirmPassword"  class="input-field"
+                <input pInputText type="password" formControlName="confirmPassword" class="input-field"
                   [placeholder]="'enter-system-password' | translate">
               </div>
             </div>
@@ -95,6 +121,30 @@
                 *ngIf="userform.controls['password'].dirty && userform.controls['confirmPassword'].dirty  ? userform.errors?.mismatch : false ">
               </p-message>
             </div>
+
+
+
+
+            <!-- user role -->
+
+            <div class="p-col-12">
+              {{'role-title'| translate}}
+            </div>
+
+            <div class="p-col-12">
+              <div class="p-inputgroup">
+                <span class="p-inputgroup-addon"><i class="pi pi-user"></i></span>
+                <p-dropdown [options]="roles" formControlName="role" optionLabel="name" optionValue="code"></p-dropdown>
+              </div>
+            </div>
+
+
+            <div class="p-col-12">
+              <p-message severity="error"
+                [text]="userform.controls['role'].errors['required'] ? ('user-role-required' | translate) :''"
+                *ngIf="!userform.controls['role'].valid && userform.controls['role'].dirty"></p-message>
+            </div>
+
 
             <!-- submit -->
             <div class="p-col-3"></div>

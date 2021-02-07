@@ -19,7 +19,6 @@ import { LoginResponse } from 'src/app/user/service/models/login.response';
 })
 export class ConnectorService {
 
-  //private static HOST = 'http://cts.alriyadh.gov.sa:7077/IPAD/CTSUtilities/ctsActions/';
   private static HOST ;
   constructor(
     private httpClient: HttpClient,
@@ -31,7 +30,8 @@ export class ConnectorService {
 
 
   public async loadHost() {
-    ConnectorService.HOST = ""; /*"http://localhost:80/";*/
+    ConnectorService.HOST = "";
+    //ConnectorService.HOST = "http://localhost:80/";
     /*
     let hostPath =  'assets/data/host.json';
     await this.httpClient.get<any>(hostPath).toPromise().then( (data) => {

@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { Response } from 'src/app/common/models/response';
 import { CommonService } from 'src/app/common/service/common/common.service';
 import { ConnectorService } from 'src/app/common/service/connector/connector.service';
+import { AddAccountRequest } from 'src/app/user/service/models/add-account.request';
 import { AddUserRequest } from './models/add-user-request';
 import { ChangeAdminPassword } from './models/change-admin-password-request';
 import { SuspendUserRequest } from './models/suspend-user-request copy';
@@ -15,10 +16,10 @@ import { UsersListResponse } from './models/users-list.response';
 })
 export class SystemsService {
 
-  public static USERS_LIST = 'user/admins-list';
-  public static ADD_ADMIN = 'user/add-admin';
-  public static DELETE_SYSTEM = 'user/delete-admin';
-  public static SUSPEND_SYSTEM = 'user/suspend-admin';
+  public static ACCOUNTS_LIST = 'user/accounts-list';
+  public static ADD_ACCOUNT = 'user/add-account';
+  public static DELETE_SYSTEM = 'user/delete-account';
+  public static SUSPEND_ACCOUNT = 'user/suspend-account';
   public static CHANGE_ADMIN_PASSWORD = 'user/change-admin-password';
 
 
@@ -29,8 +30,7 @@ export class SystemsService {
 
   public systemsList(request: UsersListRequest, onSuccess: any) {
 
-    request.name = ''; // no search by name
-    this.connector.authentictedPost(SystemsService.USERS_LIST, request).then((response: UsersListResponse) => {
+    this.connector.authentictedPost(SystemsService.ACCOUNTS_LIST, request).then((response: UsersListResponse) => {
       onSuccess(response);
     }, (response: Response) => {
       this.cs.dialogsService.retryDialog(() => {
@@ -39,16 +39,13 @@ export class SystemsService {
     });
   }
 
-  public addSystem(credentials: Credential, onSuccess: any) {
+  public addSystem(request: AddAccountRequest, onSuccess: any) {
 
-    let request = new AddUserRequest();
-    request.credentials = credentials;
-
-    this.connector.authentictedPost(SystemsService.ADD_ADMIN, request).then((response: Response) => {
+    this.connector.authentictedPost(SystemsService.ADD_ACCOUNT, request).then((response: Response) => {
       onSuccess(response);
     }, (response: Response) => {
       this.cs.dialogsService.retryDialog(() => {
-        this.addSystem(credentials, onSuccess);
+        this.addSystem(request, onSuccess);
       }, response.error.message);
     });
   }
@@ -69,17 +66,17 @@ export class SystemsService {
 
 
 
-  public suspendSystem(user: User, suspend: boolean, onSuccess: any) {
+  public suspendAccount(user: User, suspend: boolean, onSuccess: any) {
 
     let request = new SuspendUserRequest();
     request.id = user.id;
     request.suspend = suspend;
 
-    this.connector.authentictedPost(SystemsService.SUSPEND_SYSTEM, request).then((response: Response) => {
+    this.connector.authentictedPost(SystemsService.SUSPEND_ACCOUNT, request).then((response: Response) => {
       onSuccess(response);
     }, (response: Response) => {
       this.cs.dialogsService.retryDialog(() => {
-        this.suspendSystem(user, suspend, onSuccess);
+        this.suspendAccount(user, suspend, onSuccess);
       }, response.error.message);
     });
   }

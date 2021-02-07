@@ -1,6 +1,16 @@
 <p-toast position="center" [showTransitionOptions]="'200ms'" [hideTransitionOptions]="'100ms'"></p-toast>
 
+<div class="p-grid">
+  <div class="p-col-12">
+    <div class="p-inputgroup">
+      <span class="p-inputgroup-addon"><i class="pi pi-search"></i></span>
+      <input type="text" pInputText type="text" [(ngModel)]="systemId" class="input-field"
+        [placeholder]="'enter-system-id' | translate" (keyup)="onSearchChanged()" >
+      <button (click)="onSearch()"  type="button" pButton pRipple icon="pi pi-check" styleClass="p-button-success"></button>
 
+    </div>
+  </div>
+</div>
 
 <p-table [value]="users" [lazy]="true" (onLazyLoad)="loadUsersList($event)" [paginator]="true" [rows]="pageSize"
   [totalRecords]="totalRecords" [loading]="loading">
@@ -8,6 +18,7 @@
   <ng-template pTemplate="header">
     <tr>
       <th>{{'name' | translate}}</th>
+      <th>{{'system' | translate}}</th>
       <th class="option-cell">{{ 'suspend' | translate}}</th>
       <th class="option-cell">{{ 'delete' | translate }}</th>
       <th class="option-cell">{{ 'change-password' | translate}}</th>
@@ -19,6 +30,11 @@
       <td>
         <p class="system-name">{{user.name}} </p>
       </td>
+
+      <td>
+        <p class="system-name">{{user.systemId}} </p>
+      </td>
+
       <td><button (click)="suspendSystem(user)" pButton type="button"
           [label]="(user.suspended ? 'activate' : 'suspend') | translate "></button>
       </td>
